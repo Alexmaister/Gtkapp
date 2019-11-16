@@ -23,23 +23,40 @@ void mainfunction (GtkApplication *app, gpointer user_data)
 {
 	GtkWidget *window;
 	GtkWidget *button;
-	GtkWidget *button_box;
+	GtkWidget *grid;
 
 	//Create window from app
 	window = gtk_application_window_new (app);
 	gtk_window_set_title (GTK_WINDOW (window), "GTKAPPLICATION");
 	gtk_window_set_default_size (GTK_WINDOW (window), 500, 500);
+	gtk_container_set_border_width (GTK_CONTAINER(window), 10);
 
-	//Create button container and add to window
-	button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-	gtk_container_add (GTK_CONTAINER (window), button_box);
+	//Create grid and pack into window
+	grid = gtk_grid_new ();
+	gtk_container_add (GTK_CONTAINER (window), grid);
 
 	//Create button and add to button container
 	button = gtk_button_new_with_label ("Click me");
 	g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), NULL);
 	//g_signal_connect_swapped is used to can close all window in other case only the button was destroyed
 	g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
-	gtk_container_add (GTK_CONTAINER (button_box), button);
+
+	//Place button in grid cell (0,0) and fill q cell hor and ver
+	gtk_grid_attach (GTK_GRID (grid), button, 0, 0, 1, 1);
+
+	//Create two button additional
+	button = gtk_button_new_with_label ("Click me2");
+	g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), NULL);
+
+	//Place first in (1,0) and fill 
+	gtk_grid_attach (GTK_GRID (grid), button, 1, 0, 1, 1);
+	
+	button = gtk_button_new_with_label ("Click me3");
+	g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), NULL);
+	
+	//Second in (0,1) and span 2 columns
+	gtk_grid_attach (GTK_GRID (grid), button, 0, 1, 2, 1);
+	
 	gtk_widget_show_all (window);
 
 }
