@@ -1,8 +1,8 @@
 #The $@ CONSTANT SUSTITUTE THE NAME OF ACTION
 
-PROGRAM = Gtkapp.out
+PROGRAM = ../bin/Gtkapp.out
 
-SOURCE = main.c
+SOURCE = ../src/main.c
 
 LIB = gtk+-3.0
 
@@ -16,8 +16,8 @@ OPTION = -Wall
 
 #PERM =	$(shell chmod ugo+x $(PROGRAM))
 
-Gtkapp.out:
-	$(CC) $(OPTION) $(SOURCE) $(LIBS) $(CFLAGS) -o $@
+Gtkapp:
+	$(CC) $(OPTION) $(SOURCE) $(LIBS) $(CFLAGS) -o $(PROGRAM)
 
 all:
 	chmod ugo+x $(PROGRAM)
