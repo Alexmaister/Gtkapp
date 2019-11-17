@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	//Construct a GtkBuilder instance and load UI file
 	builder = gtk_builder_new ();
 	//Path from program is located
-	if (gtk_builder_add_from_file (builder, "../src/view/view.ui", &error) == 0)
+	if (gtk_builder_add_from_file (builder, "../view/view.ui", &error) == 0)
 	{
 		g_printerr ("Error loading file: %s\n", error->message);
 		g_clear_error (&error);
