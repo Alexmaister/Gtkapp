@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+APP_TYPE	include/app.h	6;"	d
+APP_WINDOW_TYPE	include/appwindow.h	7;"	d
+_App	src/app.c	/^struct _App $/;"	s	file:
+_AppWindow	src/appwindow.c	/^struct _AppWindow$/;"	s	file:
+__APPWIN_H	include/appwindow.h	2;"	d
+__APP_H	include/app.h	2;"	d
+app_activate	src/app.c	/^void app_activate (GApplication *app)$/;"	f
+app_class_init	src/app.c	/^void app_class_init (AppClass *class)$/;"	f
+app_init	src/app.c	/^void app_init (App *app)$/;"	f
+app_new	src/app.c	/^App * app_new (void)$/;"	f
+app_open	src/app.c	/^void app_open (GApplication *app,$/;"	f
+app_window_class_init	src/appwindow.c	/^void app_window_class_init (AppWindowClass *class)$/;"	f
+app_window_init	src/appwindow.c	/^void app_window_init (AppWindow *app)$/;"	f
+app_window_new	src/appwindow.c	/^AppWindow *app_window_new (App *app)$/;"	f
+app_window_open	src/appwindow.c	/^void app_window_open (AppWindow *win,$/;"	f
+main	src/main.c	/^ int main (int argc, char *argv[]) $/;"	f
+parent	src/app.c	/^	Gtkapplication parent;$/;"	m	struct:_App	file:
+parent	src/appwindow.c	/^	GtkApplicationWindow parent;$/;"	m	struct:_AppWindow	file:
